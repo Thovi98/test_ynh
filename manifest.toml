@@ -90,7 +90,7 @@ ram.runtime = "50M"
     main.default = 2342
 
     [resources.apt]
-    packages = "ffmpeg, exiftool, libimage-exiftool-perl, libpng-dev, libjpeg-dev, libtiff-dev, imagemagick, darktable, mariadb-server, rawtherapee, libheif, libavcodec-extra"
+    packages = "ffmpeg, exiftool, libimage-exiftool-perl, libpng-dev, libjpeg-dev, libtiff-dev, imagemagick, darktable, mariadb-server, rawtherapee, libavcodec-extra, tzdata"
 
     [resources.database]
     type = "mysql"
