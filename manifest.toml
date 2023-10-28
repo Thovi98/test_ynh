@@ -76,6 +76,10 @@ ram.runtime = "50M"
 
     [resources.permissions]
     main.url = "/"
+    main.auth_header = false
+
+    auth.url = "/library/login"
+    auth.auth_header = false
 
     sharing.url = "/s"
     sharing.allowd = "visitors"
@@ -86,7 +90,7 @@ ram.runtime = "50M"
     main.default = 2342
 
     [resources.apt]
-    packages = "ffmpeg, exiftool, libimage-exiftool-perl, libpng-dev, libjpeg-dev, libtiff-dev, imagemagick, darktable, mariadb-server"
+    packages = "ffmpeg, exiftool, libimage-exiftool-perl, libpng-dev, libjpeg-dev, libtiff-dev, imagemagick, darktable, mariadb-server, rawtherapee, libheif, libavcodec-extra, sqlite3, tzdata"
 
     [resources.database]
     type = "mysql"
