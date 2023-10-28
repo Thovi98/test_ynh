@@ -5,7 +5,7 @@ name = "Photoprism"
 description.en = "AI-Powered Photos App for the Decentralized Web"
 description.fr = "Gestion de photos en ligne"
 
-version = "2023.09.23~ynh1"
+version = "2023.10.21~ynh1"
 
 maintainers = ["Thovi98"]
 
@@ -64,8 +64,8 @@ ram.runtime = "50M"
     [resources.sources]
 
         [resources.sources.main]
-        amd64.url = "https://dl.photoprism.app/pkg/linux/photoprism-231024-1e7b6c625-linux-amd64.tar.gz"
-        amd64.sha256 = "3de6021aea14e5f8ca8580069b8ba81fd882c79759accf06ec30a487de805cf6"
+        amd64.url = "https://github.com/Thovi98/test_ynh/releases/download/2023-10-21/photoprism-231028-9abea5b55-linux-amd64.tar.gz"
+        amd64.sha256 = "2a1f2dcc70a94baf3ceaa6b7187d6a2517d6f360a1d2d979bd04ee928429a830"
         # autoupdate.strategy = "latest_github_tag"
 
     [resources.system_user]
