@@ -99,7 +99,7 @@ cp -a -r server/resources server/package.json server/package-lock.json $install_
 cp -a server/start*.sh $install_dir/app/
 popd
 
-push "$install_dir/app/"
+pushd "$install_dir/app/"
 ynh_exec_warn_less npm cache clean --force
 popd
 
