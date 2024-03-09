@@ -71,21 +71,21 @@ ynh_script_progression --message="Building the app..."
 
 pushd "$install_dir/build/server"
     ynh_use_nodejs
-    ynh_exec_warn_less npm ci
-    ynh_exec_warn_less npm run build
-    ynh_exec_warn_less npm prune --omit=dev --omit=optional
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" ci
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" run build
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" prune --omit=dev --omit=optional
 popd
 
 pushd "$install_dir/build/open-api/typescript-sdk"
     ynh_use_nodejs
-    ynh_exec_warn_less npm ci
-    ynh_exec_warn_less npm run build
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" ci
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" run build
 popd
 
 pushd "$install_dir/build/web"
     ynh_use_nodejs
-    ynh_exec_warn_less npm ci
-    ynh_exec_warn_less npm run build
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" ci
+    ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" run build
 popd
 
 pushd "$install_dir/build/"
