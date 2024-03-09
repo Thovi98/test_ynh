@@ -1,13 +1,19 @@
 [Unit]
-Description=Small description of the service
+Description=Immich server
+Documentation=https://github.com/immich-app/immich
 After=network.target
+After=postgresql.service
+After=redis.service
 
 [Service]
 Type=simple
 User=__APP__
 Group=__APP__
-WorkingDirectory=__INSTALL_DIR__/
-ExecStart=__INSTALL_DIR__/script
+WorkingDirectory=__INSTALL_DIR__/app/
+EnvironmentFile=__INSTALL_DIR__/.env
+Environment="NODE_ENV=production"
+Environment="__YNH_NODE_LOAD_PATH__"
+ExecStart=__YNH_NODE__ __INSTALL_DIR__/app/dist/main immich
 StandardOutput=append:/var/log/__APP__/__APP__.log
 StandardError=inherit
 
