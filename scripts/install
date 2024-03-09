@@ -69,6 +69,7 @@ chown $app:$app "$install_dir/.env"
 #=================================================
 ynh_script_progression --message="Building the app..."
 
+ynh_script_progression --message="Building the app server..."
 pushd "$install_dir/build/server"
     ynh_use_nodejs
     ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" ci
@@ -76,12 +77,14 @@ pushd "$install_dir/build/server"
     ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" prune --omit=dev --omit=optional
 popd
 
+ynh_script_progression --message="Building the app api..."
 pushd "$install_dir/build/open-api/typescript-sdk"
     ynh_use_nodejs
     ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" ci
     ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" run build
 popd
 
+ynh_script_progression --message="Building the app web..."
 pushd "$install_dir/build/web"
     ynh_use_nodejs
     ynh_exec_warn_less ynh_exec_as "$app" env "$ynh_node_load_PATH" "$ynh_npm" ci
