@@ -104,7 +104,7 @@ ynh_exec_warn_less npm cache clean --force
 popd
 
 mkdir -p "$install_dir/app/machine-learning"
-python 3 -m venv $install_dir/app/machine-learning/venv
+python3 -m venv $install_dir/app/machine-learning/venv
 source $install_dir/app/machine-learning/venv/bin/activate
 ynh_exec_warn_less pip install --upgrade pip poetry
 
