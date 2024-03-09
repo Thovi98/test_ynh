@@ -18,14 +18,7 @@ demo = "https://demo.immich.app"
 admindoc = "https://immich.app/docs/overview/introduction"
 userdoc = "https://immich.app/docs/overview/introduction"
 code = "https://github.com/immich-app/immich"
-
-
-# FIXME: optional but recommended (or remove if irrelevant / not applicable).
-# This is meant to be an URL where people can financially support this app, especially when its development is based
-# on volunteers and/or financed by its community. YunoHost may later advertise it in the webadmin.
 fund = "https://liberapay.com/alex.tran1502"
-fund = "https://github.com/sponsors/immich-app"
-fund = "https://www.buymeacoffee.com/altran1502"
 
 [integration]
 yunohost = ">= 11.2"
