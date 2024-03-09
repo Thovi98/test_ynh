@@ -108,7 +108,7 @@ popd
 mkdir -p "$install_dir/app/machine-learning"
 python3 -m venv $install_dir/app/machine-learning/venv
 source $install_dir/app/machine-learning/venv/bin/activate
-ynh_exec_warn_less pip install --upgrade pip poetry
+ynh_exec_warn_less pip install --upgrade pip poetry pyyaml toml
 
 pushd "$install_dir/app/machine-learning/"
 #ynh_exec_warn_less poetry install --no-root --with dev --with cpu
@@ -130,9 +130,9 @@ ln -s $data_dir/uploads $install_dir/app/machine-learning/
 sed -i -e "s@app.listen(port)@app.listen(port, '127.0.0.1')@g" $install_dir/app/dist/microservices/main.js
 
 #custom start.sh script
-ynh_add_config --template="../conf/start-ml.sh" --destination="$install_dir/app/machine-learning/start-ml.sh"
-chmod +x "$install_dir/start-ml.sh"
-chown $app:$app "$install_dir/start-ml.sh"
+#ynh_add_config --template="../conf/start-ml.sh" --destination="$install_dir/app/machine-learning/start-ml.sh"
+#chmod +x "$install_dir/start-ml.sh"
+#chown $app:$app "$install_dir/start-ml.sh"
 
 ynh_secure_remove --file="$install_dir/build"
 
