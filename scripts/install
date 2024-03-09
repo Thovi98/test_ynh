@@ -95,7 +95,7 @@ pushd "$install_dir/build/"
 mkdir -p $install_dir/app/
 cp -a -r server/node_modules server/dist server/bin $install_dir/app/
 #cp -a -r web/build $install_dir/app/web
-cp -a -r machine-learning/ $install_dir/app/machine-learning/
+cp -a machine-learning/pyproject.toml $install_dir/app/machine-learning/
 cp -a -r server/resources server/package.json server/package-lock.json $install_dir/app/
 cp -a server/start*.sh $install_dir/app/
 popd
@@ -110,11 +110,11 @@ source $install_dir/app/machine-learning/venv/bin/activate
 ynh_exec_warn_less pip install --upgrade pip poetry
 
 pushd "$install_dir/app/machine-learning/"
-ynh_exec_warn_less poetry install --no-root --with dev --with cpu
+#ynh_exec_warn_less poetry install --no-root --with dev --with cpu
 popd
 
 pushd "$install_dir/build/"
-cp -a -r machine-learning/ann machine-learning/start.sh machine-learning/app $install_dir/app/machine-learning/
+cp -a -r machine-learning/ann machine-learning/app $install_dir/app/machine-learning/
 popd
 
 push "$install_dir/app/"
