@@ -79,4 +79,4 @@ ram.runtime = "4G"
     packages = "ffmpeg, python3-venv, python3-dev,"
 
     [resources.database]
-    type = "potsgresql"
+    type = "postgresql"
