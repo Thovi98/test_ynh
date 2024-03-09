@@ -93,6 +93,7 @@ popd
 
 pushd "$install_dir/build/"
 mkdir -p $install_dir/app/
+mkdir -p $install_dir/app/machine-learning/
 cp -a -r server/node_modules server/dist server/bin $install_dir/app/
 #cp -a -r web/build $install_dir/app/web
 cp -a machine-learning/pyproject.toml $install_dir/app/machine-learning/
