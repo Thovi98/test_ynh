@@ -118,7 +118,7 @@ pushd "$install_dir/build/"
 cp -a -r machine-learning/ann machine-learning/app $install_dir/app/machine-learning/
 popd
 
-push "$install_dir/app/"
+pushd "$install_dir/app/"
 ynh_npm install sharp
 popd
 
